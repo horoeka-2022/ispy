@@ -7,6 +7,7 @@ const fs = require('fs')
 // multer must haves:
 const multer = require('multer')
 const upload = multer({ dest: './server/public/uploads/' })
+const db = require('./db/db')
 
 const server = express()
 server.use(express.json())
@@ -37,13 +38,19 @@ server.post('/uploadFile', upload.single('avatar'), function (req, res) {
       console.log('callback')
     }
   )
-  // call db function to add image filename and the img description into the database...
+  //add img to database
   const imgForDb = {
     img: `./server/public/uploads/${newFileName}`,
     description: 'my fav pic',
-    category: 'sunset'
-
+    category: 'sunset',
   }
+  db.addImg(imgForDb)
+    .then(() => {
+      res.sendStatus(201)
+    })
+    .catch((err) => {
+      console.error(err.message)
+    })
   res.sendStatus(200)
   // req.file is the `avatar` file
   // req.body will hold the text fields, if there were any
