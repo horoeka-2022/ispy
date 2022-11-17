@@ -7,7 +7,7 @@ const fs = require('fs')
 // multer must haves:
 const multer = require('multer')
 const upload = multer({ dest: './server/public/uploads/' })
-const db = require('./db/db')
+const db = require('./db/connection')
 
 const server = express()
 server.use(express.json())
