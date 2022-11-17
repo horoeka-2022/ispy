@@ -1,9 +1,10 @@
 import { configureStore } from '@reduxjs/toolkit'
-
-// import stuff from './stuff'
+import moodboard from './moodboard'
 
 const store = configureStore({
-  reducer: {},
+  reducer: {
+    moodboard,
+  },
 })
 
 export default store
