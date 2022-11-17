@@ -1,9 +1,9 @@
-import React, { useState } from 'react'
+import React, { useState, useEffect } from 'react'
 
 import List from './List'
 
 function App() {
-  // useEffect(() => { }, [])
+  useEffect(() => {}, [])
 
   const [image, setImage] = useState({ preview: '', data: '' })
   const [status, setStatus] = useState('')
@@ -29,7 +29,8 @@ function App() {
 
   return (
     <>
-      <p>Boilerplate</p>
+      <h1>iSpy</h1>
+      <List />
       <div className="App">
         <h1> Add an Image!</h1>
         {image.preview && (
