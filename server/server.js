@@ -41,7 +41,7 @@ server.post('/uploadFile', upload.single('avatar'), function (req, res) {
   )
   //add img to database
   const imgForDb = {
-    img: `./server/public/uploads/${newFileName}`,
+    img: `./uploads/${newFileName}`,
     description: 'sssss',
     category: 'sunset',
   }

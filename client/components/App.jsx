@@ -29,17 +29,10 @@ function App() {
 
   return (
     <>
-<<<<<<< HEAD
       <div className="App">
         <header><img className="logo" src="./images/Logo.png" alt="cool logo" /></header>
         <List />
         <div>
-=======
-      <div>
-        <header><img className="logo" src="./images/Logo.png" alt="cool logo" /></header>
-        <List />
-        <div className="App">
->>>>>>> 70209735492e637a4d7d84669cfb2cd364f50a6f
           <h1> Add an Image!</h1>
           {image.preview && (
             <img
@@ -57,10 +50,6 @@ function App() {
           {status && <h4>{status}</h4>}
         </div>
       </div>
-<<<<<<< HEAD
-=======
-      <h2>Looking good!</h2>
->>>>>>> 70209735492e637a4d7d84669cfb2cd364f50a6f
     </>
   )
 }

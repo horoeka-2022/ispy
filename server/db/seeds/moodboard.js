@@ -5,44 +5,10 @@ exports.seed = function (knex) {
       return knex('moodboard').insert([
         {
           id: 1,
-          description: 'sunset pic',
-          category: 'sunset',
-        },
-        {
-          id: 2,
-          description: 'sunset pic',
-          category: 'sunset',
-        },
-        {
-          id: 3,
-          description: 'sunset pic',
-          category: 'sunset',
-        },
-        {
-          id: 4,
-          description: 'sunset pic',
-          category: 'sunset',
-        },
-        {
-          id: 5,
-          description: 'sunset pic',
-          category: 'sunset',
-        },
-        {
-          id: 6,
-          description: 'sunset pic',
-          category: 'sunset',
-        },
-        {
-          id: 7,
-          description: 'sunset pic',
-          category: 'sunset',
-        },
-        {
-          id: 8,
-          description: 'sunset pic',
-          category: 'sunset',
-        },
+          description: 'cat',
+          img: './uploads/ac36d0c6d08b851c696de372568bd8d0.jpeg',
+          category: 'cat',
+        }
       ])
     })
 }
