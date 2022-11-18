@@ -1,12 +1,16 @@
 import React, { useState, useEffect } from 'react'
-
+import { postMyPostThenGet } from '../slices/moodboard'
+import { useDispatch } from 'react-redux'
 import List from './List'
+import request from 'superagent'
 
 function App() {
   useEffect(() => {}, [])
+  const dispatch = useDispatch()
 
   const [image, setImage] = useState({ preview: '', data: '' })
   const [status, setStatus] = useState('')
+  const [description, setDescription] = useState('')
 
   const handleSubmit = async (e) => {
     e.preventDefault()
@@ -16,6 +20,9 @@ function App() {
       method: 'POST',
       body: formData,
     })
+    const body = await response.json()
+    const id = body.id
+    await request.post('/api/v1/moodboard').send({ description, id })
     if (response) setStatus(response.statusText)
   }
 
@@ -23,8 +30,13 @@ function App() {
     const img = {
       preview: URL.createObjectURL(e.target.files[0]),
       data: e.target.files[0],
+      description: '',
     }
     setImage(img)
+  }
+
+  function handleChange(event) {
+    setDescription(() => event.target.value)
   }
 
   return (
@@ -44,6 +56,12 @@ function App() {
         <hr></hr>
         <form onSubmit={handleSubmit}>
           <input type="file" name="file" onChange={handleFileChange}></input>
+          <input
+            type="text"
+            name="description"
+            onChange={handleChange}
+            value={description}
+          />
           <button type="submit">Submit</button>
         </form>
         {status && <h4>{status}</h4>}

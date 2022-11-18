@@ -20,9 +20,9 @@ router.get('/', (req, res) => {
 })
 
 router.post('/', (req, res) => {
-  const { description, category } = req.body
+  const { id, description, category } = req.body
   //include multer post route!!!!!!!!!!!!!!!!!!!!!!!!!
-  db.addMoodboard({ description, category })
+  db.addMoodboard({ id, description, category })
     .then(() => {
       res.sendStatus(201)
       return null
