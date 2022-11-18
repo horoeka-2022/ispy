@@ -1,3 +1,77 @@
-body {
-  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+header {
+
+ 
 }
+
+.logo {
+  height: 100px;
+  justify-content:center;
+
+
+  
+}
+
+body {
+  font-family: Arial, Helvetica, sans-serif;
+  color: wheat;
+  background: rgb(184,152,181);
+  background: linear-gradient(90deg, rgba(184,152,181,1) 0%, rgba(121,67,9,1) 43%, rgba(0,212,255,1) 100%);
+  font-size: 16px;
+  margin: 0;
+  padding: 100px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+}
+
+
+.container {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+
+.app {
+  display: flex;
+  flex-direction: column;
+  padding: 50px;
+}
+
+.puppy-list {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin: 50px;
+}
+
+.puppy {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin: 50px;
+}
+
+.img-circle {
+  border-radius: 50%;
+  object-fit: cover;
+  width: 230px;
+  height: 230px;
+}
+
+.title {
+  text-align: center;
+}
+
+.nav {
+  text-align: center;
+  color: black;
+}
+
+.form {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  font-family: 'Roboto', sans-serif;
+}
+
