@@ -15,8 +15,8 @@ function getMoodboard(db = connection) {
 }
 
 function addMoodboard(myPost, db = connection) {
-  const { description } = myPost
-  return db('moodboard').insert({ description })
+  const { id, description } = myPost
+  return db('moodboard').where('id', id).update({ description })
 }
 
 function getImg(db = connection) {

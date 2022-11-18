@@ -29,6 +29,7 @@ server.post('/uploadFile', upload.single('avatar'), function (req, res) {
   const fileType = req.file.mimetype.split('/')[1]
   console.log(fileType)
   console.log(req.body)
+  console.log(req.file)
   // can access the description in form, by accessing req.body.text....
   const newFileName = req.file.filename + '.' + fileType
   fs.rename(
@@ -41,17 +42,16 @@ server.post('/uploadFile', upload.single('avatar'), function (req, res) {
   //add img to database
   const imgForDb = {
     img: `./server/public/uploads/${newFileName}`,
-    description: 'my fav pic',
+    description: 'sssss',
     category: 'sunset',
   }
   db.addImg(imgForDb)
-    .then(() => {
-      res.sendStatus(201)
+    .then(([id]) => {
+      res.json({ id })
     })
     .catch((err) => {
       console.error(err.message)
     })
-  res.sendStatus(200)
   // req.file is the `avatar` file
   // req.body will hold the text fields, if there were any
 })
