@@ -3,7 +3,7 @@ import React, { useState, useEffect } from 'react'
 import List from './List'
 
 function App() {
-  useEffect(() => {}, [])
+  useEffect(() => { }, [])
 
   const [image, setImage] = useState({ preview: '', data: '' })
   const [status, setStatus] = useState('')
@@ -29,27 +29,27 @@ function App() {
 
   return (
     <>
-      <h1>iSpy</h1>
-      <List />
       <div className="App">
-        <h1> Add an Image!</h1>
-        {image.preview && (
-          <img
-            src={image.preview}
-            width="100"
-            height="100"
-            alt="imagepreview"
-          />
-        )}
-        <hr></hr>
-        <form onSubmit={handleSubmit}>
-          <input type="file" name="file" onChange={handleFileChange}></input>
-          <button type="submit">Submit</button>
-        </form>
-        {status && <h4>{status}</h4>}
+        <header><img className="logo" src="./images/Logo.png" alt="cool logo" /></header>
+        <List />
+        <div>
+          <h1> Add an Image!</h1>
+          {image.preview && (
+            <img
+              src={image.preview}
+              width="100"
+              height="100"
+              alt="imagepreview"
+            />
+          )}
+          <hr></hr>
+          <form onSubmit={handleSubmit}>
+            <input type="file" name="file" onChange={handleFileChange}></input>
+            <button type="submit">Submit</button>
+          </form>
+          {status && <h4>{status}</h4>}
+        </div>
       </div>
-
-      <h2>Looking good!</h2>
     </>
   )
 }
