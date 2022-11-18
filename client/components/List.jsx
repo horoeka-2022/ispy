@@ -14,9 +14,9 @@ function List() {
   // console.log(moodboard)
 
   return (
-    <div>
+    <div className="app">
       {/* see where classnames were in todo fullstack for styling ref :~) */}
-      <ul>
+      <ul className="puppy-list">
         {moodboard.map((myPost) => (
           <li key={myPost.id}>
             <MyPost myPost={myPost} />

@@ -5,7 +5,10 @@ function MyPost({ myPost }) {
   return (
     <div key={myPost.id}>
       <label>{myPost.description}</label>
-      <img src={myPost.img} alt={myPost.description} />
+      <div className="puppy">
+        <img className="img-circle" src={myPost.img} alt={myPost.description} />
+      </div>
+
     </div>
   )
 }

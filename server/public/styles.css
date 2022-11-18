@@ -5,10 +5,7 @@ header {
 
 .logo {
   height: 100px;
-  justify-content:center;
-
-
-  
+  justify-content:center; 
 }
 
 body {
@@ -30,24 +27,26 @@ body {
   display: flex;
   flex-wrap: wrap;
   justify-content: center;
+  padding: 50px;
 }
 
 .app {
   display: flex;
-  flex-direction: column;
+  flex-direction: row;
   padding: 50px;
 }
 
 .puppy-list {
   display: flex;
-  flex-direction: column;
+  flex-direction: row;
+  flex-wrap: wrap;
   align-items: center;
   margin: 50px;
 }
 
 .puppy {
   display: flex;
-  flex-direction: column;
+  flex-direction: row;
   align-items: center;
   margin: 50px;
 }
@@ -61,6 +60,7 @@ body {
 
 .title {
   text-align: center;
+  font-size: 5rem;
 }
 
 .nav {
