@@ -1,13 +1,12 @@
-exports.up = function (knex) {
+exports.up = (knex) => {
   return knex.schema.createTable('moodboard', (table) => {
-    table.increments('id').primary()
-    // ^ image url or whatev
+    table.increments('id')
     table.string('description')
     table.string('img')
     table.string('category')
   })
 }
 
-exports.down = function (knex) {
+exports.down = (knex) => {
   return knex.schema.dropTable('moodboard')
 }
