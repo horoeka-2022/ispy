@@ -3,6 +3,7 @@ exports.up = function (knex) {
     table.increments('id').primary()
     // ^ image url or whatev
     table.string('description')
+    table.string('img')
     table.string('category')
   })
 }
